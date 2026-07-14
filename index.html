@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Our Space ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="hearts-container"></div>
+
+    <div id="login-overlay">
+        <div class="login-card">
+            <h1>Our Secret Space ❤️</h1>
+            <div class="form-group">
+                <label>Who are you?</label>
+                <select id="user-select">
+                    <option value="" disabled selected>Select User</option>
+                    <option value="Bro">Bro</option>
+                    <option value="Raa">Raa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password-input" placeholder="Enter magic word...">
+                <span id="login-error" class="error-text"></span>
+            </div>
+            <button id="login-btn">Enter Chat</button>
+        </div>
+    </div>
+
+    <div id="app-container" class="hidden">
+        
+        <header class="top-bar">
+            <div class="user-status-container">
+                <div class="status-item">
+                    <div class="avatar" id="avatar-bro">B</div>
+                    <span class="status-dot" id="status-bro"></span>
+                </div>
+                <div class="status-item">
+                    <div class="avatar" id="avatar-raa">R</div>
+                    <span class="status-dot" id="status-raa"></span>
+                </div>
+            </div>
+            <div class="title-container">
+                <h2>Us ❤️</h2>
+                <div id="typing-indicator" class="typing-text hidden">Typing...</div>
+            </div>
+            <button id="send-love-btn" class="love-btn">Send Love ❤️</button>
+        </header>
+
+        <div id="chat-area">
+            <button id="load-more-btn" class="hidden">Load Older Messages</button>
+            <div id="message-list"></div>
+            <div id="scroll-anchor"></div>
+        </div>
+
+        <div id="reply-preview" class="hidden">
+            <div class="reply-content">
+                <span class="reply-sender">Replying to...</span>
+                <span class="reply-text">Message text</span>
+            </div>
+            <button id="cancel-reply">✕</button>
+        </div>
+
+        <footer class="composer">
+            <button id="attach-btn" title="Add Image">📷</button>
+            <input type="file" id="file-input" accept="image/*" hidden>
+            
+            <div class="input-wrapper">
+                <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+            </div>
+            
+            <button id="send-btn">➤</button>
+        </footer>
+    </div>
+
+    <div id="context-menu" class="hidden">
+        <div class="menu-item" data-action="reply">↩ Reply</div>
+        <div class="menu-item" data-action="react">❤️ React</div>
+        <div class="menu-item" data-action="edit">✎ Edit</div>
+        <div class="menu-item" data-action="delete" style="color: red;">🗑 Delete</div>
+    </div>
+
+    <div id="confirm-modal" class="hidden">
+        <div class="modal-content">
+            <p>Are you sure you want to delete this?</p>
+            <div class="modal-actions">
+                <button id="confirm-yes">Yes</button>
+                <button id="confirm-no">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
